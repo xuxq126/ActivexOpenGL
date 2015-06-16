@@ -2,19 +2,19 @@
 /*Opengl组件开发样例程序1
 注意事项：可能造成组件无法显示的原因
 //窗口无法显示或窗口闪烁
-Create后必须setfocus激活该窗口，LbuttonDown中最好也要有setfocus
-窗口style是否去除背景画笔，父窗口设置为CLIPCHILDREN，擦除背景return true
+	Create后必须setfocus激活该窗口，LbuttonDown中最好也要有setfocus
+	窗口style是否去除背景画笔，父窗口设置为CLIPCHILDREN，擦除背景return true
 OnSize是否设置响应
 //窗口只有背景颜色没有物体
-视角问题是否在视野之外，可能不能看见物体
-Onsize中缺少以下内容或某句
-	glViewport(0, 0, cx, cy);//根据窗口大小
-	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
-	glLoadIdentity();						// reset projection matrix
-	gluPerspective(45.0f,(GLfloat)cx/(GLfloat)cy,1.0f,1000.0f);
-	glMatrixMode(GL_MODELVIEW);				// set modelview matrix
-	glLoadIdentity();
-	Invalidate();
+	1视角问题是否在视野之外，可能不能看见物体
+	2Onsize中缺少以下内容或某句
+		glViewport(0, 0, cx, cy);//根据窗口大小
+		glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
+		glLoadIdentity();						// reset projection matrix
+		gluPerspective(45.0f,(GLfloat)cx/(GLfloat)cy,1.0f,1000.0f);
+		glMatrixMode(GL_MODELVIEW);				// set modelview matrix
+		glLoadIdentity();
+		Invalidate();
 //组件在网页无法显示
 GUID可能不正确GUID是 CMyCtrl 的类信息id，idl文件中的第三个
 网页语句如下
@@ -321,7 +321,7 @@ void CMyAX7Ctrl::OnSize(UINT nType, int cx, int cy)
 
 void CMyAX7Ctrl::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	// TODO: 在此添加消息处理程序代码和/或调用默认值;;
 	Invalidate();
 	COleControl::OnTimer(nIDEvent);
 }
