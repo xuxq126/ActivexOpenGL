@@ -1,0 +1,49 @@
+// MyAX7.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(MyAX7.tlb)，该类型库将成为
+// MyAX7.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(C61A31F2-1F1F-4442-897F-E02C9F9A2DFE), version(1.0),
+  control ]
+library MyAX7Lib
+{
+	importlib(STDOLE_TLB);
+
+	//  CMyAX7Ctrl 的主调度接口
+	[ 
+		uuid(621E8B08-8C65-4CE2-980E-35C0FF70343B)	
+	]
+	dispinterface _DMyAX7
+	{
+		properties:
+		methods:
+	};
+
+	//  CMyAX7Ctrl 的事件调度接口
+
+	[ 
+		uuid(234D167B-2B62-4D13-B32B-ADC9714898C9)	
+	]
+	dispinterface _DMyAX7Events
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CMyAX7Ctrl 的类信息
+	[
+		uuid(0F832A91-FFC8-4CAE-A5CA-0E038590F1A0)
+	]
+	coclass MyAX7
+	{
+		[default] dispinterface _DMyAX7;
+		[default, source] dispinterface _DMyAX7Events;
+	};
+
+};
