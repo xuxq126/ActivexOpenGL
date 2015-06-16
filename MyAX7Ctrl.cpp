@@ -1,23 +1,23 @@
-// MyAX7Ctrl.cpp : CMyAX7Ctrl ActiveX ¿Ø¼şÀàµÄÊµÏÖ¡£
-/*Opengl×é¼ş¿ª·¢ÑùÀı³ÌĞò1
-×¢ÒâÊÂÏî£º¿ÉÄÜÔì³É×é¼şÎŞ·¨ÏÔÊ¾µÄÔ­Òò
-//´°¿ÚÎŞ·¨ÏÔÊ¾»ò´°¿ÚÉÁË¸
-	Createºó±ØĞësetfocus¼¤»î¸Ã´°¿Ú£¬LbuttonDownÖĞ×îºÃÒ²ÒªÓĞsetfocus
-	´°¿ÚstyleÊÇ·ñÈ¥³ı±³¾°»­±Ê£¬¸¸´°¿ÚÉèÖÃÎªCLIPCHILDREN£¬²Á³ı±³¾°return true
-OnSizeÊÇ·ñÉèÖÃÏìÓ¦
-//´°¿ÚÖ»ÓĞ±³¾°ÑÕÉ«Ã»ÓĞÎïÌå
-	1ÊÓ½ÇÎÊÌâÊÇ·ñÔÚÊÓÒ°Ö®Íâ£¬¿ÉÄÜ²»ÄÜ¿´¼ûÎïÌå
-	2OnsizeÖĞÈ±ÉÙÒÔÏÂÄÚÈİ»òÄ³¾ä
-		glViewport(0, 0, cx, cy);//¸ù¾İ´°¿Ú´óĞ¡
+// MyAX7Ctrl.cpp : CMyAX7Ctrl ActiveX æ§ä»¶ç±»çš„å®ç°ã€‚
+/*Openglç»„ä»¶å¼€å‘æ ·ä¾‹ç¨‹åº1
+æ³¨æ„äº‹é¡¹ï¼šå¯èƒ½é€ æˆç»„ä»¶æ— æ³•æ˜¾ç¤ºçš„åŸå› 
+//çª—å£æ— æ³•æ˜¾ç¤ºæˆ–çª—å£é—ªçƒ
+	Createåå¿…é¡»setfocusæ¿€æ´»è¯¥çª—å£ï¼ŒLbuttonDownä¸­æœ€å¥½ä¹Ÿè¦æœ‰setfocus
+	çª—å£styleæ˜¯å¦å»é™¤èƒŒæ™¯ç”»ç¬”ï¼Œçˆ¶çª—å£è®¾ç½®ä¸ºCLIPCHILDRENï¼Œæ“¦é™¤èƒŒæ™¯return true
+OnSizeæ˜¯å¦è®¾ç½®å“åº”
+//çª—å£åªæœ‰èƒŒæ™¯é¢œè‰²æ²¡æœ‰ç‰©ä½“
+	1è§†è§’é—®é¢˜æ˜¯å¦åœ¨è§†é‡ä¹‹å¤–ï¼Œå¯èƒ½ä¸èƒ½çœ‹è§ç‰©ä½“
+	2Onsizeä¸­ç¼ºå°‘ä»¥ä¸‹å†…å®¹æˆ–æŸå¥
+		glViewport(0, 0, cx, cy);//æ ¹æ®çª—å£å¤§å°
 		glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 		glLoadIdentity();						// reset projection matrix
 		gluPerspective(45.0f,(GLfloat)cx/(GLfloat)cy,1.0f,1000.0f);
 		glMatrixMode(GL_MODELVIEW);				// set modelview matrix
 		glLoadIdentity();
 		Invalidate();
-//×é¼şÔÚÍøÒ³ÎŞ·¨ÏÔÊ¾
-GUID¿ÉÄÜ²»ÕıÈ·GUIDÊÇ CMyCtrl µÄÀàĞÅÏ¢id£¬idlÎÄ¼şÖĞµÄµÚÈı¸ö
-ÍøÒ³Óï¾äÈçÏÂ
+//ç»„ä»¶åœ¨ç½‘é¡µæ— æ³•æ˜¾ç¤º
+GUIDå¯èƒ½ä¸æ­£ç¡®GUIDæ˜¯ CMyCtrl çš„ç±»ä¿¡æ¯idï¼Œidlæ–‡ä»¶ä¸­çš„ç¬¬ä¸‰ä¸ª
+ç½‘é¡µè¯­å¥å¦‚ä¸‹
 	<html>
 		<head>
 			<title>OCX test page </title>
@@ -42,7 +42,7 @@ GUID¿ÉÄÜ²»ÕıÈ·GUIDÊÇ CMyCtrl µÄÀàĞÅÏ¢id£¬idlÎÄ¼şÖĞµÄµÚÈı¸ö
 
 IMPLEMENT_DYNCREATE(CMyAX7Ctrl, COleControl)
 
-// ÏûÏ¢Ó³Éä
+// æ¶ˆæ¯æ˜ å°„
 
 BEGIN_MESSAGE_MAP(CMyAX7Ctrl, COleControl)
 	ON_MESSAGE(OCM_COMMAND, &CMyAX7Ctrl::OnOcmCommand)
@@ -53,38 +53,38 @@ BEGIN_MESSAGE_MAP(CMyAX7Ctrl, COleControl)
 	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
-// µ÷¶ÈÓ³Éä
+// è°ƒåº¦æ˜ å°„
 
 BEGIN_DISPATCH_MAP(CMyAX7Ctrl, COleControl)
 END_DISPATCH_MAP()
 
-// ÊÂ¼şÓ³Éä
+// äº‹ä»¶æ˜ å°„
 
 BEGIN_EVENT_MAP(CMyAX7Ctrl, COleControl)
 END_EVENT_MAP()
 
-// ÊôĞÔÒ³
+// å±æ€§é¡µ
 
-// TODO: °´ĞèÒªÌí¼Ó¸ü¶àÊôĞÔÒ³¡£Çë¼Ç×¡Ôö¼Ó¼ÆÊı!
+// TODO: æŒ‰éœ€è¦æ·»åŠ æ›´å¤šå±æ€§é¡µã€‚è¯·è®°ä½å¢åŠ è®¡æ•°!
 BEGIN_PROPPAGEIDS(CMyAX7Ctrl, 1)
 	PROPPAGEID(CMyAX7PropPage::guid)
 END_PROPPAGEIDS(CMyAX7Ctrl)
 
-// ³õÊ¼»¯Àà¹¤³§ºÍ guid
+// åˆå§‹åŒ–ç±»å·¥å‚å’Œ guid
 
 IMPLEMENT_OLECREATE_EX(CMyAX7Ctrl, "MYAX7.MyAX7Ctrl.1",
 	0xf832a91, 0xffc8, 0x4cae, 0xa5, 0xca, 0xe, 0x3, 0x85, 0x90, 0xf1, 0xa0)
 
-// ¼üÈë¿â ID ºÍ°æ±¾
+// é”®å…¥åº“ ID å’Œç‰ˆæœ¬
 
 IMPLEMENT_OLETYPELIB(CMyAX7Ctrl, _tlid, _wVerMajor, _wVerMinor)
 
-// ½Ó¿Ú ID
+// æ¥å£ ID
 
 const IID IID_DMyAX7 = { 0x621E8B08, 0x8C65, 0x4CE2, { 0x98, 0xE, 0x35, 0xC0, 0xFF, 0x70, 0x34, 0x3B } };
 const IID IID_DMyAX7Events = { 0x234D167B, 0x2B62, 0x4D13, { 0xB3, 0x2B, 0xAD, 0xC9, 0x71, 0x48, 0x98, 0xC9 } };
 
-// ¿Ø¼şÀàĞÍĞÅÏ¢
+// æ§ä»¶ç±»å‹ä¿¡æ¯
 
 static const DWORD _dwMyAX7OleMisc =
 	OLEMISC_ACTIVATEWHENVISIBLE |
@@ -96,15 +96,15 @@ static const DWORD _dwMyAX7OleMisc =
 IMPLEMENT_OLECTLTYPE(CMyAX7Ctrl, IDS_MYAX7, _dwMyAX7OleMisc)
 
 // CMyAX7Ctrl::CMyAX7CtrlFactory::UpdateRegistry -
-// Ìí¼Ó»òÒÆ³ı CMyAX7Ctrl µÄÏµÍ³×¢²á±íÏî
+// æ·»åŠ æˆ–ç§»é™¤ CMyAX7Ctrl çš„ç³»ç»Ÿæ³¨å†Œè¡¨é¡¹
 
 BOOL CMyAX7Ctrl::CMyAX7CtrlFactory::UpdateRegistry(BOOL bRegister)
 {
-	// TODO: ÑéÖ¤ÄúµÄ¿Ø¼şÊÇ·ñ·ûºÏµ¥ÔªÄ£ĞÍÏß³Ì´¦Àí¹æÔò¡£
-	// ÓĞ¹Ø¸ü¶àĞÅÏ¢£¬Çë²Î¿¼ MFC ¼¼ÊõËµÃ÷ 64¡£
-	// Èç¹ûÄúµÄ¿Ø¼ş²»·ûºÏµ¥ÔªÄ£ĞÍ¹æÔò£¬Ôò
-	// ±ØĞëĞŞ¸ÄÈçÏÂ´úÂë£¬½«µÚÁù¸ö²ÎÊı´Ó
-	// afxRegApartmentThreading ¸ÄÎª 0¡£
+	// TODO: éªŒè¯æ‚¨çš„æ§ä»¶æ˜¯å¦ç¬¦åˆå•å…ƒæ¨¡å‹çº¿ç¨‹å¤„ç†è§„åˆ™ã€‚
+	// æœ‰å…³æ›´å¤šä¿¡æ¯ï¼Œè¯·å‚è€ƒ MFC æŠ€æœ¯è¯´æ˜ 64ã€‚
+	// å¦‚æœæ‚¨çš„æ§ä»¶ä¸ç¬¦åˆå•å…ƒæ¨¡å‹è§„åˆ™ï¼Œåˆ™
+	// å¿…é¡»ä¿®æ”¹å¦‚ä¸‹ä»£ç ï¼Œå°†ç¬¬å…­ä¸ªå‚æ•°ä»
+	// afxRegApartmentThreading æ”¹ä¸º 0ã€‚
 
 	if (bRegister)
 		return AfxOleRegisterControlClass(
@@ -123,24 +123,24 @@ BOOL CMyAX7Ctrl::CMyAX7CtrlFactory::UpdateRegistry(BOOL bRegister)
 }
 
 
-// CMyAX7Ctrl::CMyAX7Ctrl - ¹¹Ôìº¯Êı
+// CMyAX7Ctrl::CMyAX7Ctrl - æ„é€ å‡½æ•°
 
 CMyAX7Ctrl::CMyAX7Ctrl()
 {
 	InitializeIIDs(&IID_DMyAX7, &IID_DMyAX7Events);
-	// TODO: ÔÚ´Ë³õÊ¼»¯¿Ø¼şµÄÊµÀıÊı¾İ¡£
+	// TODO: åœ¨æ­¤åˆå§‹åŒ–æ§ä»¶çš„å®ä¾‹æ•°æ®ã€‚
 }
 
-// CMyAX7Ctrl::~CMyAX7Ctrl - Îö¹¹º¯Êı
+// CMyAX7Ctrl::~CMyAX7Ctrl - ææ„å‡½æ•°
 
 CMyAX7Ctrl::~CMyAX7Ctrl()
 {
 	wglMakeCurrent(NULL,NULL);
 	wglDeleteContext(m_RC);
-	// TODO: ÔÚ´ËÇåÀí¿Ø¼şµÄÊµÀıÊı¾İ¡£
+	// TODO: åœ¨æ­¤æ¸…ç†æ§ä»¶çš„å®ä¾‹æ•°æ®ã€‚
 }
 
-// CMyAX7Ctrl::OnDraw - »æÍ¼º¯Êı
+// CMyAX7Ctrl::OnDraw - ç»˜å›¾å‡½æ•°
 
 void CMyAX7Ctrl::OnDraw(
 			CDC* pdc, const CRect& rcBounds, const CRect& rcInvalid)
@@ -149,7 +149,7 @@ void CMyAX7Ctrl::OnDraw(
 		return;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);     
 	glLoadIdentity();
-	//´¹Ö±ÏòÏÂ¿´eyey=centery
+	//å‚ç›´å‘ä¸‹çœ‹eyey=centery
 	gluLookAt(0.0,0.0, 5, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	static float angle=0.0f;
 	angle+=1.5f;
@@ -166,28 +166,28 @@ void CMyAX7Ctrl::OnDraw(
 	DoSuperclassPaint(pdc, rcBounds);
 }
 
-// CMyAX7Ctrl::DoPropExchange - ³Ö¾ÃĞÔÖ§³Ö
+// CMyAX7Ctrl::DoPropExchange - æŒä¹…æ€§æ”¯æŒ
 
 void CMyAX7Ctrl::DoPropExchange(CPropExchange* pPX)
 {
 	ExchangeVersion(pPX, MAKELONG(_wVerMinor, _wVerMajor));
 	COleControl::DoPropExchange(pPX);
 
-	// TODO: ÎªÃ¿¸ö³Ö¾ÃµÄ×Ô¶¨ÒåÊôĞÔµ÷ÓÃ PX_ º¯Êı¡£
+	// TODO: ä¸ºæ¯ä¸ªæŒä¹…çš„è‡ªå®šä¹‰å±æ€§è°ƒç”¨ PX_ å‡½æ•°ã€‚
 }
 
 
-// CMyAX7Ctrl::OnResetState - ½«¿Ø¼şÖØÖÃÎªÄ¬ÈÏ×´Ì¬
+// CMyAX7Ctrl::OnResetState - å°†æ§ä»¶é‡ç½®ä¸ºé»˜è®¤çŠ¶æ€
 
 void CMyAX7Ctrl::OnResetState()
 {
-	COleControl::OnResetState();  // ÖØÖÃ DoPropExchange ÖĞÕÒµ½µÄÄ¬ÈÏÖµ
+	COleControl::OnResetState();  // é‡ç½® DoPropExchange ä¸­æ‰¾åˆ°çš„é»˜è®¤å€¼
 
-	// TODO: ÔÚ´ËÖØÖÃÈÎÒâÆäËû¿Ø¼ş×´Ì¬¡£
+	// TODO: åœ¨æ­¤é‡ç½®ä»»æ„å…¶ä»–æ§ä»¶çŠ¶æ€ã€‚
 }
 
 
-// CMyAX7Ctrl::PreCreateWindow - ĞŞ¸Ä CreateWindowEx µÄ²ÎÊı
+// CMyAX7Ctrl::PreCreateWindow - ä¿®æ”¹ CreateWindowEx çš„å‚æ•°
 
 BOOL CMyAX7Ctrl::PreCreateWindow(CREATESTRUCT& cs)
 {
@@ -197,26 +197,26 @@ BOOL CMyAX7Ctrl::PreCreateWindow(CREATESTRUCT& cs)
 	return COleControl::PreCreateWindow(cs);
 }
 
-// CMyAX7Ctrl::IsSubclassedControl - ÕâÊÇÒ»¸ö×ÓÀà¿Ø¼ş
+// CMyAX7Ctrl::IsSubclassedControl - è¿™æ˜¯ä¸€ä¸ªå­ç±»æ§ä»¶
 
 BOOL CMyAX7Ctrl::IsSubclassedControl()
 {
 	return TRUE;
 }
 
-// CMyAX7Ctrl::OnOcmCommand - ´¦ÀíÃüÁîÏûÏ¢
+// CMyAX7Ctrl::OnOcmCommand - å¤„ç†å‘½ä»¤æ¶ˆæ¯
 
 LRESULT CMyAX7Ctrl::OnOcmCommand(WPARAM wParam, LPARAM lParam)
 {
 	WORD wNotifyCode = HIWORD(wParam);
 
-	// TODO: ÔÚ´Ë½ÓÍ¨ wNotifyCode¡£
+	// TODO: åœ¨æ­¤æ¥é€š wNotifyCodeã€‚
 
 	return 0;
 }
 
 
-// CMyAX7Ctrl ÏûÏ¢´¦Àí³ÌĞò
+// CMyAX7Ctrl æ¶ˆæ¯å¤„ç†ç¨‹åº
 
 
 int CMyAX7Ctrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -277,7 +277,7 @@ int CMyAX7Ctrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	//glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_TEXTURE_2D);
 	//glDepthFunc(GL_LEQUAL);
-	glViewport(0, 0, 100, 100);//¸ù¾İ´°¿Ú´óĞ¡
+	glViewport(0, 0, 100, 100);//æ ¹æ®çª—å£å¤§å°
 	// select the projection matrix and clear it out
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -293,7 +293,7 @@ int CMyAX7Ctrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 BOOL CMyAX7Ctrl::OnEraseBkgnd(CDC* pDC)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	return TRUE;
 	//return COleControl::OnEraseBkgnd(pDC);
 }
@@ -302,7 +302,7 @@ BOOL CMyAX7Ctrl::OnEraseBkgnd(CDC* pDC)
 void CMyAX7Ctrl::OnSize(UINT nType, int cx, int cy)
 {
 	COleControl::OnSize(nType, cx, cy);
-	glViewport(0, 0, cx, cy);//¸ù¾İ´°¿Ú´óĞ¡
+	glViewport(0, 0, cx, cy);//æ ¹æ®çª—å£å¤§å°
 	glMatrixMode(GL_PROJECTION);			// set projection matrix current matrix
 	glLoadIdentity();						// reset projection matrix
 	//
@@ -315,13 +315,13 @@ void CMyAX7Ctrl::OnSize(UINT nType, int cx, int cy)
 
 	Invalidate();
 
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 }
 
 
 void CMyAX7Ctrl::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ;;
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	Invalidate();
 	COleControl::OnTimer(nIDEvent);
 }
