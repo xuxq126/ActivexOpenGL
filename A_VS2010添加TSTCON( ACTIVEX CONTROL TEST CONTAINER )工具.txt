@@ -1,0 +1,18 @@
+VS2010添加TSTCON( ACTIVEX CONTROL TEST CONTAINER )工具
+vs2010中的TSTCON( ActiveX Control Test Container )工具非自动安装，而是作为一个例程提供。所以应找到该例程，并编译：
+
+如vs2010安装在默认路径则
+
+1, 进入：C:\Program Files\Microsoft Visual Studio 10.0\Samples\1033，可找到VC2010Samples.zip文件，
+
+2, 将其解决到同一个文件夹，解压后将出现一个C++子文件夹。
+
+3, TstCon例程在：C:\Program Files\Microsoft Visual Studio 10.0\Samples\1033\C++\MFC\ole\TstCon，双击其中的.sln文件启动工程，直接编译，
+
+4, 编译后在Debug子文件夹中将出现一个TstCon.exe文件，将其复制到：C:\Program Files\Microsoft Visual Studio 10.0\Common7\Tools文件夹。
+
+5, 在vs2010中的Tools菜单点击“External Tools...”，出现如下对话框，点击“Add”添加一项工具。
+
+6, 新工具项的"Title"为：ActiveX Control Test Container，"Command"为：C:\Program Files\Microsoft Visual Studio 10.0\Common7\Tools\TstCon.exe。
+
+7, 确认退出对话框，Tools菜单将出现“ActiveX Control Test Container”菜单项。完毕！

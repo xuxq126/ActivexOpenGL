@@ -137,6 +137,7 @@ CMyAX7Ctrl::~CMyAX7Ctrl()
 {
 	wglMakeCurrent(NULL,NULL);
 	wglDeleteContext(m_RC);
+	
 	// TODO: 在此清理控件的实例数据。
 }
 
